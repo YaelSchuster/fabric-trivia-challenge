@@ -67,8 +67,8 @@ table stationStatistics
 		source =
 				let
 				    Source = Connection,
-				    stationStatistics1 = Source{[Name="stationStatistics"]}[Data],
-				    #"Invoked FunctionstationStatistics1" = stationStatistics1(CurrentDate)
+				    stationStatisticsToday1 = Source{[Name="stationStatisticsToday"]}[Data],
+				    #"Invoked FunctionstationStatistics1" = stationStatisticsToday1(0)
 				in
 				    #"Invoked FunctionstationStatistics1"
 

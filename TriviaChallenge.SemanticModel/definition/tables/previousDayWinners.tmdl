@@ -136,8 +136,8 @@ table previousDayWinners
 		source =
 				let
 				    Source = Connection,
-				    leaderboard1 = Source{[Name="leaderboard"]}[Data],
-				    #"Invoked Functionleaderboard1" = leaderboard1(Date.AddDays(CurrentDate,-1), 3),
+				    leaderboardPreviousDay1 = Source{[Name="leaderboardPreviousDay"]}[Data],
+				    #"Invoked Functionleaderboard1" = leaderboardPreviousDay1(0),
 				    #"Renamed Columns" = Table.RenameColumns(#"Invoked Functionleaderboard1",{{"userName", "User"}, {"streakCount", "Streak Count"}, {"FinalScore", "Final Score"}, {"correctAnswers", "Correct Answers"}, {"imageUrl", "Station"}, {"URL", "Track"}})
 				in
 				    #"Renamed Columns"

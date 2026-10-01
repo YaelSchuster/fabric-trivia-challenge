@@ -228,8 +228,8 @@ table allSessions
 		source =
 				let
 				    Source = Connection,
-				    allSessions1 = Source{[Name="allSessions"]}[Data],
-				    #"Invoked FunctionallSessions1" = allSessions1(CurrentDate)
+				    allSessionsToday1 = Source{[Name="allSessionsToday"]}[Data],
+				    #"Invoked FunctionallSessions1" = allSessionsToday1(0)
 				in
 				    #"Invoked FunctionallSessions1"
 

@@ -1,0 +1,3 @@
+FabricPool
+| extend __mapRefresh=now()
+| project-away __mapRefresh

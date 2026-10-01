@@ -79,8 +79,8 @@ table topHardestCategory
 		source =
 				let
 				    Source = Connection,
-				    topHardestCategory1 = Source{[Name="topHardestCategory"]}[Data],
-				    #"Invoked FunctiontopHardestCategory1" = topHardestCategory1(CurrentDate, 3)
+				    topHardestCategoryToday1 = Source{[Name="topHardestCategoryToday"]}[Data],
+				    #"Invoked FunctiontopHardestCategory1" = topHardestCategoryToday1(0)
 				in
 				    #"Invoked FunctiontopHardestCategory1"
 

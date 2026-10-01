@@ -79,8 +79,8 @@ table topEasiestCategory
 		source =
 				let
 				    Source = Connection,
-				    topEasiestCategory1 = Source{[Name="topEasiestCategory"]}[Data],
-				    #"Invoked FunctiontopEasiestCategory1" = topEasiestCategory1(CurrentDate, 3)
+				    topEasiestCategoryToday1 = Source{[Name="topEasiestCategoryToday"]}[Data],
+				    #"Invoked FunctiontopEasiestCategory1" = topEasiestCategoryToday1(0)
 				in
 				    #"Invoked FunctiontopEasiestCategory1"
 

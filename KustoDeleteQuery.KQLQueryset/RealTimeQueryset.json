@@ -3,26 +3,30 @@
     "version": "1.0.0",
     "dataSources": [
       {
-        "id": "69a7dfa5-efc1-4fbe-904c-1f4bb9cb883a",
+        "id": "ca250b35-011c-43ff-b4ba-5c21a8353236",
         "clusterUri": "",
         "type": "Fabric",
-        "databaseItemId": "be843d92-adc6-b044-4e33-753613cefde7",
-        "databaseItemName": "TriviaEventhouse"
+        "databaseItemId": "463822a8-0587-90e3-4eff-1b85559e662e"
       },
       {
-        "id": "7d004cf1-b109-49a7-ae48-f75c4b092bf4",
+        "id": "ab9ab48a-279b-4bf1-8a46-4312ddf52a78",
         "clusterUri": "",
         "type": "Fabric",
-        "databaseItemId": "bb8afa96-36a3-894f-4a11-18073a76fafc",
-        "databaseItemName": "TriviaEventhouse2"
+        "databaseItemId": "240fd18c-29b5-8e53-4f39-db6f1cfd2404"
       }
     ],
     "tabs": [
       {
-        "id": "6e17823a-0c8e-403d-8ec0-a25c74d555c7",
-        "content": ".clear table raw_events data",
-        "title": "Delete",
-        "dataSourceId": "69a7dfa5-efc1-4fbe-904c-1f4bb9cb883a"
+        "id": "11510d4d-8698-4206-9da4-7a842e76cd53",
+        "content": ".create-or-alter function with (skipvalidation = \"true\") FabricPool {\n    allSessions(now())\n| where pool contains \"Fabric\"\n| extend JoinKey = iff(isnotempty(state), state, country)\n| join kind=leftouter (\n    locations\n    | extend JoinKey = iff(CountryRegion_ShortName == \"United States\", AdminDivision1, CountryRegion_ShortName)\n    | project JoinKey,\n              CountryRegion_ShortName,\n              AdminDivision1,\n              Longitude,\n              Latitude\n) on JoinKey\n| project state, country, pool ,Longitude, Latitude, correctAnswers\n| summarize totalCorrectAnswers=sum(correctAnswers) by tostring(pool), country, state, Longitude, Latitude\n| extend circle_geometry = geo_point_buffer(Longitude, Latitude, 75000)}\n\nImages\n\nlocations\n\nraw_events\n\n.clear table raw_events data ",
+        "title": "map",
+        "dataSourceId": "ab9ab48a-279b-4bf1-8a46-4312ddf52a78"
+      },
+      {
+        "id": "41c781c6-f7ac-41d3-ab24-0ec50a31f0e5",
+        "content": "//allSessions(now())\nallSessions(datetime(2026-02-17))\n| where pool contains \"SQL\"\n| extend JoinKey = iff(isnotempty(state), state, country)\n| join kind=leftouter (\n    locations\n    | extend JoinKey = iff(CountryRegion_ShortName == \"United States\", AdminDivision1, CountryRegion_ShortName)\n    | project JoinKey,\n              CountryRegion_ShortName,\n              AdminDivision1,\n              Longitude,\n              Latitude\n) on JoinKey\n| project state, country, pool ,Longitude, Latitude, correctAnswers\n| summarize totalCorrectAnswers=sum(correctAnswers) by tostring(pool), country, state, Longitude, Latitude\n| extend circle_geometry = geo_point_buffer(Longitude, Latitude, 75000)\n",
+        "title": "SQL map",
+        "dataSourceId": "ab9ab48a-279b-4bf1-8a46-4312ddf52a78"
       }
     ]
   }

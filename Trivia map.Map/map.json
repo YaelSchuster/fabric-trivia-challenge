@@ -1,0 +1,392 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/map/definition/2.0.0/schema.json",
+  "basemap": {
+    "options": {
+      "center": [
+        10.3085722,
+        39.943293
+      ],
+      "zoom": "3.6",
+      "pitch": "50",
+      "bearing": "0",
+      "renderWorldCopies": false,
+      "style": "road",
+      "styleOverrides": {
+        "adminDistrict": {
+          "borderVisible": false
+        },
+        "adminDistrict2": {
+          "borderVisible": false
+        }
+      }
+    },
+    "controls": {
+      "zoom": false,
+      "pitch": false,
+      "compass": false,
+      "traffic": false
+    }
+  },
+  "dataSources": [
+    {
+      "itemType": "KqlDatabase",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "240fd18c-29b5-8e53-4f39-db6f1cfd2404"
+    }
+  ],
+  "iconSources": [],
+  "layerSources": [
+    {
+      "id": "fd31d7b7-afb3-4ef7-9464-9c3b4e4d35c9",
+      "name": "SQLPool",
+      "type": "kusto",
+      "itemId": "240fd18c-29b5-8e53-4f39-db6f1cfd2404",
+      "refreshIntervalMs": 2000
+    },
+    {
+      "id": "71283a71-a8f9-4142-8a97-3b60401da9c0",
+      "name": "FabricPool",
+      "type": "kusto",
+      "itemId": "240fd18c-29b5-8e53-4f39-db6f1cfd2404",
+      "refreshIntervalMs": 2000
+    }
+  ],
+  "layerSettings": [
+    {
+      "id": "b84b98e3-fa6f-4a0c-b633-b2a653557857",
+      "name": "SQL 1-5 correct",
+      "sourceId": "fd31d7b7-afb3-4ef7-9464-9c3b4e4d35c9",
+      "options": {
+        "color": "#118DFF",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 100000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 1.0,
+          "max": 5.0,
+          "id": "f5c57329-0c6a-4e40-86b6-3c5dad5ca859",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "0f40a872-beca-49ce-89b3-409ea5261062",
+      "name": "SQL 6-10 correct",
+      "sourceId": "fd31d7b7-afb3-4ef7-9464-9c3b4e4d35c9",
+      "options": {
+        "color": "#118DFF",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 250000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 6.0,
+          "max": 10.0,
+          "id": "dcad7a23-0012-4046-82b8-ff8e6d9b441d",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "88104bd3-8e42-4e7c-90fe-cda3a0b34daf",
+      "name": "SQL 11-20 correct",
+      "sourceId": "fd31d7b7-afb3-4ef7-9464-9c3b4e4d35c9",
+      "options": {
+        "color": "#118DFF",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 500000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 11.0,
+          "max": 20.0,
+          "id": "168b10e5-c1c1-4a58-8277-90a15c4b8de6",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "495dd82a-633b-470e-b5d3-c039e0c75e06",
+      "name": "SQL 21+ correct",
+      "sourceId": "fd31d7b7-afb3-4ef7-9464-9c3b4e4d35c9",
+      "options": {
+        "color": "#118DFF",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#118DFF",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 1000000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 21.0,
+          "max": 1000000000.0,
+          "id": "c6835191-39f0-421a-8bc6-8b1b811b8288",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "8c8b2e4f-4e07-4cb1-806b-930078cfcd0b",
+      "name": "Fabric 1-5 correct",
+      "sourceId": "71283a71-a8f9-4142-8a97-3b60401da9c0",
+      "options": {
+        "color": "#4EC251",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 100000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 1.0,
+          "max": 5.0,
+          "id": "c399b1f2-140f-4023-86d4-014e9fea89ed",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "6ea14f87-f84c-44ad-8cb0-4e666fb419e8",
+      "name": "Fabric 6-10 correct",
+      "sourceId": "71283a71-a8f9-4142-8a97-3b60401da9c0",
+      "options": {
+        "color": "#4EC251",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 250000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 6.0,
+          "max": 10.0,
+          "id": "892addc2-59de-4065-b6da-8fab6365e668",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "26b4845a-d0bf-46a9-a53d-faab52382a33",
+      "name": "Fabric 11-20 correct",
+      "sourceId": "71283a71-a8f9-4142-8a97-3b60401da9c0",
+      "options": {
+        "color": "#4EC251",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 500000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 11.0,
+          "max": 20.0,
+          "id": "ad5f0e12-a907-4564-a26c-759219c1bd6b",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    },
+    {
+      "id": "96b938ac-948a-4921-93d9-454d760387fc",
+      "name": "Fabric 21+ correct",
+      "sourceId": "71283a71-a8f9-4142-8a97-3b60401da9c0",
+      "options": {
+        "color": "#4EC251",
+        "type": "vector",
+        "visible": true,
+        "enablePopups": true,
+        "allowExtrusions": true,
+        "polygonOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.45
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#4EC251",
+          "fillOpacity": 0.85,
+          "base": 0,
+          "height": 1000000
+        },
+        "tooltipKeys": [
+          "pool",
+          "country",
+          "state",
+          "totalCorrectAnswers"
+        ],
+        "latitudeColumnName": null,
+        "longitudeColumnName": null,
+        "geometryColumnName": "circle_geometry"
+      },
+      "geometryColumnName": "circle_geometry",
+      "filters": [
+        {
+          "type": "number",
+          "min": 21.0,
+          "max": 1000000000.0,
+          "id": "c9394f67-9766-4e84-98be-2860092ae242",
+          "field": "totalCorrectAnswers",
+          "locked": true
+        }
+      ]
+    }
+  ]
+}

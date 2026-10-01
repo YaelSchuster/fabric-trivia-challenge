@@ -1,85 +1,15 @@
 {
-  "schema_version": 68,
+  "schema_version": 84,
   "autoRefresh": {
     "enabled": true,
     "defaultInterval": "1s"
   },
+  "changeDetection": {
+    "kind": "liveUpdates",
+    "minRefreshRate": "10s",
+    "fallbackRefreshRate": "30s"
+  },
   "tiles": [
-    {
-      "id": "933fd5d0-4aca-4118-890c-4a06b2590d6b",
-      "title": "Latest questions",
-      "visualType": "multistat",
-      "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
-      "layout": {
-        "x": 2,
-        "y": 14,
-        "width": 18,
-        "height": 20
-      },
-      "queryRef": {
-        "kind": "query",
-        "queryId": "32c97b1c-0c33-4cdd-90a0-778f7681d678"
-      },
-      "visualOptions": {
-        "multiStat__textSize": "large",
-        "multiStat__valueColumn": "questionText",
-        "colorRulesDisabled": false,
-        "multiStat__displayOrientation": "horizontal",
-        "multiStat__labelColumn": "pool",
-        "multiStat__slot": {
-          "width": 1,
-          "height": 3
-        },
-        "colorRules": [
-          {
-            "id": "b50b3508-d654-4a18-bf16-d5a2b4308917",
-            "ruleType": "colorByCondition",
-            "applyToColumn": null,
-            "hideText": false,
-            "applyTo": "cells",
-            "conditions": [
-              {
-                "operator": "==",
-                "column": "isCorrect",
-                "values": [
-                  "correct"
-                ]
-              }
-            ],
-            "chainingOperator": "and",
-            "colorStyle": "bold",
-            "color": "green",
-            "tag": "",
-            "icon": null,
-            "ruleName": "",
-            "visualType": "multistat"
-          },
-          {
-            "id": "a1752df0-751b-4ef5-b679-4cea03094e50",
-            "ruleType": "colorByCondition",
-            "applyToColumn": null,
-            "hideText": false,
-            "applyTo": "cells",
-            "conditions": [
-              {
-                "operator": "==",
-                "column": "isCorrect",
-                "values": [
-                  "incorrect"
-                ]
-              }
-            ],
-            "chainingOperator": "and",
-            "colorStyle": "bold",
-            "color": "red",
-            "tag": "",
-            "icon": null,
-            "ruleName": "",
-            "visualType": "multistat"
-          }
-        ]
-      }
-    },
     {
       "id": "0744d807-8bdb-40f7-a0bb-91280352c41d",
       "title": "Playing now",
@@ -129,7 +59,7 @@
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
         "x": 9,
-        "y": 9,
+        "y": 13,
         "width": 13,
         "height": 5
       },
@@ -180,7 +110,7 @@
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
         "x": 0,
-        "y": 34,
+        "y": 33,
         "width": 22,
         "height": 10
       },
@@ -230,7 +160,7 @@
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
         "x": 0,
-        "y": 44,
+        "y": 43,
         "width": 22,
         "height": 5
       },
@@ -252,48 +182,6 @@
       }
     },
     {
-      "id": "0980c4e5-c051-435a-a8d0-3e23726b416c",
-      "title": "",
-      "visualType": "markdownCard",
-      "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
-      "layout": {
-        "x": 0,
-        "y": 14,
-        "width": 2,
-        "height": 8
-      },
-      "markdownText": "![](https://i.postimg.cc/X79tB84Y/QQ-v4-2.png)",
-      "visualOptions": {}
-    },
-    {
-      "id": "e18af261-8316-4445-908e-331daaeb1717",
-      "title": "",
-      "visualType": "markdownCard",
-      "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
-      "layout": {
-        "x": 0,
-        "y": 28,
-        "width": 2,
-        "height": 6
-      },
-      "markdownText": "![](https://i.postimg.cc/G2pXMFWJ/IA-v2-1.png)",
-      "visualOptions": {}
-    },
-    {
-      "id": "2c5a4156-caad-432c-84a2-b5120c71ffe7",
-      "title": "",
-      "visualType": "markdownCard",
-      "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
-      "layout": {
-        "x": 0,
-        "y": 22,
-        "width": 2,
-        "height": 6
-      },
-      "markdownText": "![](https://i.postimg.cc/2SDR0t2c/DD-v2-2.png)",
-      "visualOptions": {}
-    },
-    {
       "id": "3eae5ec9-acb5-415e-986e-ddf711907815",
       "title": "SQL vs Fabric",
       "visualType": "pie",
@@ -302,7 +190,7 @@
         "x": 0,
         "y": 6,
         "width": 9,
-        "height": 8
+        "height": 12
       },
       "queryRef": {
         "kind": "query",
@@ -341,14 +229,14 @@
     },
     {
       "id": "e0f3ce95-03b3-4ee3-b840-cf091895d00f",
-      "title": "Station 1 pool",
+      "title": "Station 2 pool",
       "visualType": "markdown",
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
-        "x": 20,
-        "y": 22,
-        "width": 2,
-        "height": 6
+        "x": 14,
+        "y": 9,
+        "width": 3,
+        "height": 4
       },
       "queryRef": {
         "kind": "query",
@@ -366,10 +254,10 @@
       "visualType": "markdown",
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
-        "x": 20,
-        "y": 14,
-        "width": 2,
-        "height": 8
+        "x": 9,
+        "y": 9,
+        "width": 3,
+        "height": 4
       },
       "queryRef": {
         "kind": "query",
@@ -383,14 +271,14 @@
     },
     {
       "id": "f8dce021-db8a-4f26-af81-0c8eb4f1bd09",
-      "title": "Station 1 pool",
+      "title": "Station 3 pool",
       "visualType": "markdown",
       "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
       "layout": {
-        "x": 20,
-        "y": 28,
-        "width": 2,
-        "height": 6
+        "x": 19,
+        "y": 9,
+        "width": 3,
+        "height": 4
       },
       "queryRef": {
         "kind": "query",
@@ -400,6 +288,28 @@
       "visualOptions": {
         "xColumn": "FinalCard",
         "imageAllowlist": "https://i.postimg.cc/WzVcCCwM/fabric.jpg;https://i.postimg.cc/VNSwCjk3/sql.jpg"
+      }
+    },
+    {
+      "id": "bc01faed-a2ad-47c2-b9c5-f41a853add9c",
+      "title": "Trivia map",
+      "visualType": "fabricmap",
+      "pageId": "2d972cba-5dfe-4f38-aa41-9618f7af4398",
+      "layout": {
+        "x": 0,
+        "y": 18,
+        "width": 22,
+        "height": 15
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "2d0fc642-e491-4347-9d95-0288a39fc615"
+      },
+      "visualOptions": {
+        "fabricMap": {
+          "artifactId": "cfaea403-5629-4869-8d69-8545296192ed",
+          "workspaceId": "e4e32d5d-ff62-450f-bb03-5f21907ce5b5"
+        }
       }
     }
   ],
@@ -440,12 +350,12 @@
   "dataSources": [
     {
       "kind": "kusto-trident",
-      "id": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6",
       "name": "TriviaChallengeEventhouse",
       "clusterUri": "",
-      "database": "be843d92-adc6-b044-4e33-753613cefde7",
+      "databaseArtifactId": "1cfd2404-db6f-4f39-8e53-29b5240fd18c",
+      "database": "240fd18c-29b5-8e53-4f39-db6f1cfd2404",
       "workspace": "00000000-0000-0000-0000-000000000000",
-      "scopeId": "kusto-trident"
+      "id": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
     }
   ],
   "pages": [
@@ -455,17 +365,6 @@
     }
   ],
   "queries": [
-    {
-      "dataSource": {
-        "kind": "inline",
-        "dataSourceId": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
-      },
-      "text": "let pool=\r\n    raw_events\r\n    | where eventName == \"game.start\"\r\n    | extend pool=tostring(context.poolName)\r\n    | extend session=tostring(context.sessionId)\r\n    | project pool, userId, session;\r\n_todaysevents\r\n| where eventName == \"game.answerquestion\"\r\n| extend\r\n    questionId = tostring(properties.questionId),\r\n    station= tostring(context.stationId),\r\n    isCorrect = case(tobool(properties.isCorrect) == \"true\", \"correct\", \"incorrect\") \r\n| summarize arg_max(timestamp, *) by station\r\n| sort by timestamp\r\n| lookup external_table('Questions') on $left.questionId == $right.id\r\n| extend session = tostring(properties.sessionId)\r\n| lookup pool on session\r\n| project questionText, isCorrect, station, pool\r\n| extend loc = case (station == \"quantumqueryist\", \"1\", station == \"dashboarddruid\", \"2\", station == \"insightsalchemist\", \"3\", station == \"station-01\", \"1\", station == \"station-02\", \"2\", station == \"station-03\", \"3\", \"\")\r\n| where isnotempty(loc)\r\n| sort by loc asc",
-      "id": "32c97b1c-0c33-4cdd-90a0-778f7681d678",
-      "usedVariables": [
-        "_todaysevents"
-      ]
-    },
     {
       "dataSource": {
         "kind": "inline",
@@ -526,7 +425,7 @@
         "kind": "inline",
         "dataSourceId": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
       },
-      "text": "let pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName)\n    | extend session=tostring(context.sessionId)\n    | project pool, userId, session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend station= tostring(context.stationId)\n| summarize arg_max(timestamp, *) by station\n| sort by timestamp\n| extend session = tostring(properties.sessionId)\n| lookup pool on session\n| project station, pool\n| extend loc = case (station == \"quantumqueryist\", \"1\", station == \"dashboarddruid\", \"2\", station == \"insightsalchemist\", \"3\", station == \"station-01\", \"1\", station == \"station-02\", \"2\", station == \"station-03\", \"3\", \"\")\n| where loc == \"2\"\n| lookup Images on $left.pool == $right.Name\n| extend FinalCard = strcat(\"![\",pool, \"](\", URL, \")\")\n| project FinalCard;\nresult\n| union (print FinalCard = \"Waiting for players\" | where toscalar(result | count) == 0)",
+      "text": "let stationMap=\n    raw_events\n    | where eventName == \"user.register\"\n    | extend station=tostring(context.stationId)\n    | where isnotempty(station)\n    | summarize arg_max(timestamp, station) by userId;\nlet pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName), session=tostring(properties.sessionId)\n    | summarize arg_max(timestamp, pool) by session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend session=tostring(properties.sessionId)\n| lookup stationMap on userId\n| where isnotempty(station)\n| summarize arg_max(timestamp, *) by station\n| lookup pool on session\n| extend loc=case(\n    station == \"quantumqueryist\" or station == \"station-01\", \"1\",\n    station == \"dashboarddruid\" or station == \"station-02\", \"2\",\n    station == \"insightsalchemist\" or station == \"station-03\", \"3\",\n    \"\")\n| where loc == \"2\"\n| extend URL=case(\n    pool contains \"SQL\", \"https://i.postimg.cc/VNSwCjk3/sql.jpg\",\n    pool contains \"Fabric\", \"https://i.postimg.cc/WzVcCCwM/fabric.jpg\",\n    \"\")\n| extend FinalCard=iff(isnotempty(URL), strcat(\"![\", pool, \"](\", URL, \")\"), pool)\n| project FinalCard;\nresult\n| union (print FinalCard=\"Waiting for tagged players\" | where toscalar(result | count) == 0)",
       "id": "89c68714-ef74-4969-af7f-df404196cd03",
       "usedVariables": [
         "_todaysevents"
@@ -537,7 +436,7 @@
         "kind": "inline",
         "dataSourceId": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
       },
-      "text": "let pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName)\n    | extend session=tostring(context.sessionId)\n    | project pool, userId, session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend station= tostring(context.stationId)\n| summarize arg_max(timestamp, *) by station\n| sort by timestamp\n| extend session = tostring(properties.sessionId)\n| lookup pool on session\n| project station, pool\n| extend loc = case (station == \"quantumqueryist\", \"1\", station == \"dashboarddruid\", \"2\", station == \"insightsalchemist\", \"3\", station == \"station-01\", \"1\", station == \"station-02\", \"2\", station == \"station-03\", \"3\", \"\")\n| where loc == \"1\"\n| lookup Images on $left.pool == $right.Name\n| extend FinalCard = strcat(\"![\",pool, \"](\", URL, \")\")\n| project FinalCard;\nresult\n| union (print FinalCard = \"Waiting for players\" | where toscalar(result | count) == 0)",
+      "text": "let stationMap=\n    raw_events\n    | where eventName == \"user.register\"\n    | extend station=tostring(context.stationId)\n    | where isnotempty(station)\n    | summarize arg_max(timestamp, station) by userId;\nlet pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName), session=tostring(properties.sessionId)\n    | summarize arg_max(timestamp, pool) by session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend session=tostring(properties.sessionId)\n| lookup stationMap on userId\n| where isnotempty(station)\n| summarize arg_max(timestamp, *) by station\n| lookup pool on session\n| extend loc=case(\n    station == \"quantumqueryist\" or station == \"station-01\", \"1\",\n    station == \"dashboarddruid\" or station == \"station-02\", \"2\",\n    station == \"insightsalchemist\" or station == \"station-03\", \"3\",\n    \"\")\n| where loc == \"1\"\n| extend URL=case(\n    pool contains \"SQL\", \"https://i.postimg.cc/VNSwCjk3/sql.jpg\",\n    pool contains \"Fabric\", \"https://i.postimg.cc/WzVcCCwM/fabric.jpg\",\n    \"\")\n| extend FinalCard=iff(isnotempty(URL), strcat(\"![\", pool, \"](\", URL, \")\"), pool)\n| project FinalCard;\nresult\n| union (print FinalCard=\"Waiting for tagged players\" | where toscalar(result | count) == 0)",
       "id": "150cc80a-cd53-4481-ad45-685795a47b8d",
       "usedVariables": [
         "_todaysevents"
@@ -548,11 +447,16 @@
         "kind": "inline",
         "dataSourceId": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
       },
-      "text": "let pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName)\n    | extend session=tostring(context.sessionId)\n    | project pool, userId, session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend station= tostring(context.stationId)\n| summarize arg_max(timestamp, *) by station\n| sort by timestamp\n| extend session = tostring(properties.sessionId)\n| lookup pool on session\n| project station, pool\n| extend loc = case (station == \"quantumqueryist\", \"1\", station == \"dashboarddruid\", \"2\", station == \"insightsalchemist\", \"3\", station == \"station-01\", \"1\", station == \"station-02\", \"2\", station == \"station-03\", \"3\", \"\")\n| where loc == \"3\"\n| lookup Images on $left.pool == $right.Name\n| extend FinalCard = strcat(\"![\",pool, \"](\", URL, \")\")\n| project FinalCard;\nresult\n| union (print FinalCard = \"Waiting for players\" | where toscalar(result | count) == 0)",
+      "text": "let stationMap=\n    raw_events\n    | where eventName == \"user.register\"\n    | extend station=tostring(context.stationId)\n    | where isnotempty(station)\n    | summarize arg_max(timestamp, station) by userId;\nlet pool=\n    raw_events\n    | where eventName == \"game.start\"\n    | extend pool=tostring(context.poolName), session=tostring(properties.sessionId)\n    | summarize arg_max(timestamp, pool) by session;\nlet result =\n_todaysevents\n| where eventName == \"game.answerquestion\"\n| extend session=tostring(properties.sessionId)\n| lookup stationMap on userId\n| where isnotempty(station)\n| summarize arg_max(timestamp, *) by station\n| lookup pool on session\n| extend loc=case(\n    station == \"quantumqueryist\" or station == \"station-01\", \"1\",\n    station == \"dashboarddruid\" or station == \"station-02\", \"2\",\n    station == \"insightsalchemist\" or station == \"station-03\", \"3\",\n    \"\")\n| where loc == \"3\"\n| extend URL=case(\n    pool contains \"SQL\", \"https://i.postimg.cc/VNSwCjk3/sql.jpg\",\n    pool contains \"Fabric\", \"https://i.postimg.cc/WzVcCCwM/fabric.jpg\",\n    \"\")\n| extend FinalCard=iff(isnotempty(URL), strcat(\"![\", pool, \"](\", URL, \")\"), pool)\n| project FinalCard;\nresult\n| union (print FinalCard=\"Waiting for tagged players\" | where toscalar(result | count) == 0)",
       "id": "ed949a84-1441-4ae0-b22b-f61a2196db25",
       "usedVariables": [
         "_todaysevents"
       ]
+    },
+    {
+      "text": "",
+      "id": "2d0fc642-e491-4347-9d95-0288a39fc615",
+      "usedVariables": []
     },
     {
       "id": "eb98abf5-6b9b-43bf-931d-145c54d402a4",
@@ -560,7 +464,7 @@
         "kind": "inline",
         "dataSourceId": "c5f76ee9-8b0b-4b09-914c-ab8f8984edd6"
       },
-      "text": "raw_events\n| extend timestamp=datetime_utc_to_local(timestamp,'US/Eastern')\n| where timestamp between (startofday(_eventDate)..endofday(_eventDate))",
+      "text": "raw_events\n| extend timestamp=datetime_utc_to_local(timestamp,'Europe/Madrid')\n| where timestamp between (startofday(_eventDate)..endofday(_eventDate))",
       "usedVariables": [
         "_eventDate"
       ]
@@ -574,5 +478,6 @@
       "id": "5f0fe69f-522c-4f3f-a1dc-6d26a5913459",
       "usedVariables": []
     }
-  ]
+  ],
+  "embeddedApps": []
 }

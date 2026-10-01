@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
     "type": "KQLDatabase",
-    "displayName": "TriviaEventhouse2",
-    "description": "TriviaEventhouse2"
+    "displayName": "TriviaChallengeTelemetry",
+    "description": "Microsoft Fabric Trivia Challenge Rayfin migration"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "bb8afa96-36a3-894f-4a11-18073a76fafc"
+    "logicalId": "240fd18c-29b5-8e53-4f39-db6f1cfd2404"
   }
 }

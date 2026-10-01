@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Eventhouse",
-    "displayName": "TriviaEventhouse",
-    "description": "TriviaEventhouse"
+    "type": "KQLDatabase",
+    "displayName": "triviachallenge-analytics",
+    "description": ""
   },
   "config": {
     "version": "2.0",
-    "logicalId": "02a85ca6-07c6-a65c-4717-a745e5cad3ce"
+    "logicalId": "463822a8-0587-90e3-4eff-1b85559e662e"
   }
 }
